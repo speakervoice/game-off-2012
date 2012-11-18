@@ -1,9 +1,10 @@
 requirejs.config({
-  baseUrl: 'javascripts'
+  baseUrl: 'javascripts',
+  shim: {
+    'sea_battle/game': 'pulse.min'
+  }
 });
 
-requirejs(['pulse.min'], function() {
-  pulse.ready(function() {
-    // TODO: start building a game
-  });
+requirejs(['sea_battle/game'], function(game) {
+  game.init();
 });
